@@ -1,0 +1,30 @@
+{
+    "targetPlatforms": [
+        "aplite", 
+        "basalt", 
+        "chalk", 
+        "diorite"
+    ], 
+    "displayName": "manners", 
+    "name": "manners", 
+    "messageKeys": {
+        "dummy": 10000
+    }, 
+    "companyName": "Jordan Baczuk", 
+    "enableMultiJS": true, 
+    "versionLabel": "0.0", 
+    "capabilities": [], 
+    "sdkVersion": "3", 
+    "appKeys": {
+        "dummy": 10000
+    }, 
+    "longName": "manners", 
+    "shortName": "manners", 
+    "watchapp": {
+        "watchface": true
+    }, 
+    "resources": {
+        "media": []
+    }, 
+    "uuid": "94edbeb4-3d66-4c12-97b0-008de27bad0a"
+}

@@ -1,7 +1,7 @@
 {
   "name": "manners",
   "author": "Jordan Baczuk",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "keywords": ["pebble-app"],
   "private": true,
   "dependencies": {},
