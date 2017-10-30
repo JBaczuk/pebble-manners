@@ -5,8 +5,17 @@ static Window *s_main_window;
 static TextLayer *s_time_layer;
 static TextLayer *s_date_layer;
 static TextLayer *s_battery_layer;
+static int s_battery_level;
 
 // TODO: add battery https://developer.pebble.com/tutorials/watchface-tutorial/part4/
+
+static void battery_callback(BatteryChargeState state) {
+  // Record the new battery level
+  s_battery_level = state.charge_percent;
+  static char s_buffer[4];
+  snprintf(s_buffer, sizeof(s_buffer), "%d", s_battery_level);
+  text_layer_set_text(s_battery_layer, s_buffer);
+}
 
 static void update_time() {
   // Get a tm structure
@@ -21,12 +30,10 @@ static void update_time() {
   static char s_buffer2[10];
   strftime(s_buffer2, sizeof(s_buffer2), "%m-%d", tick_time);
   
-  static char s_buffer3[4] = "100";
 
   // Display this time on the TextLayer
   text_layer_set_text(s_time_layer, s_buffer);
   text_layer_set_text(s_date_layer, s_buffer2);
-  text_layer_set_text(s_battery_layer, s_buffer3);
 }
 
 static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
@@ -50,13 +57,13 @@ static void main_window_load(Window *window) {
   text_layer_set_background_color(s_date_layer, GColorClear);
   text_layer_set_text_color(s_date_layer, GColorBlack);
   text_layer_set_text(s_date_layer, "00-00");
-  text_layer_set_font(s_date_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14_BOLD));
+  text_layer_set_font(s_date_layer, fonts_get_system_font(FONT_KEY_ROBOTO_CONDENSED_21));
   text_layer_set_text_alignment(s_date_layer, GTextAlignmentCenter);
   
   text_layer_set_background_color(s_battery_layer, GColorClear);
   text_layer_set_text_color(s_battery_layer, GColorBlack);
   text_layer_set_text(s_battery_layer, "100");
-  text_layer_set_font(s_battery_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14_BOLD));
+  text_layer_set_font(s_battery_layer, fonts_get_system_font(FONT_KEY_ROBOTO_CONDENSED_21));
   text_layer_set_text_alignment(s_battery_layer, GTextAlignmentCenter);
 
   // Add it as a child layer to the Window's root layer
@@ -82,6 +89,9 @@ static void init() {
   window_stack_push(s_main_window, true);
   update_time();
   tick_timer_service_subscribe(MINUTE_UNIT, tick_handler);
+  // Register for battery level updates
+  battery_state_service_subscribe(battery_callback);
+  battery_callback(battery_state_service_peek());  
 }
 
 static void deinit() {
