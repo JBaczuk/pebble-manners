@@ -84,7 +84,7 @@ static void main_window_load(Window *window) {
   s_time_layer = text_layer_create(GRect(0, 52, bounds.size.w, 50));
   s_date_layer = text_layer_create(GRect(0, 0, bounds.size.w/2, 50));
   s_battery_layer = text_layer_create(GRect(bounds.size.w/2, 0, bounds.size.w/2, 50));
-  s_btc_layer = text_layer_create(GRect(0, bounds.size.h - 20, bounds.size.w, 20));
+  s_btc_layer = text_layer_create(GRect(0, bounds.size.h - 25, bounds.size.w, 50));
 
   text_layer_set_background_color(s_time_layer, GColorClear);
   text_layer_set_text_color(s_time_layer, GColorBlack);
