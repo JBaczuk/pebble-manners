@@ -8,7 +8,8 @@
     "displayName": "manners", 
     "name": "manners", 
     "messageKeys": {
-        "dummy": 10000
+        "ETH_PRICE": 10001, 
+        "BTC_PRICE": 10000
     }, 
     "companyName": "Jordan Baczuk", 
     "enableMultiJS": true, 
@@ -16,7 +17,8 @@
     "capabilities": [], 
     "sdkVersion": "3", 
     "appKeys": {
-        "dummy": 10000
+        "ETH_PRICE": 10001, 
+        "BTC_PRICE": 10000
     }, 
     "longName": "manners", 
     "shortName": "manners", 

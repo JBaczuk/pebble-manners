@@ -20,7 +20,8 @@
       "watchface": true
     },
     "messageKeys": [
-      "dummy"
+      "BTC_PRICE",
+      "ETH_PRICE"
     ],
     "resources": {
       "media": []
