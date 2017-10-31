@@ -8,16 +8,23 @@ static TextLayer *s_battery_layer;
 static TextLayer *s_btc_layer;
 static int s_battery_level;
 static char s_btc_price_buffer[12];
-static char last_btc[8] = "0000.00";
+static char last_btc[8];
 
-static uint8_t greater_than(char num1[8], char num2[8]) {
+static uint8_t greater_than(char* num1, char* num2) {     
   uint8_t is_greater = 0;
-  while (*num1) {
-    APP_LOG(APP_LOG_LEVEL_INFO, "num1: %c, num2: %c", (char)*num1, (char)*num2);
-    if((char)*num1++ > (char)*num2++) {
+  uint8_t idx;
+  char c_num1;
+  char c_num2;
+  for(idx=0; idx < sizeof(last_btc)-1; idx++) {
+    // APP_LOG(APP_LOG_LEVEL_INFO, "new: %c, last: %c", (char)*num1, (char)*num2);
+    c_num1 = (char)*num1++;
+    c_num2 = (char)*num2++;
+    if(c_num1 > c_num2) { 
       return 1;
     }
-    APP_LOG(APP_LOG_LEVEL_INFO, "is_greater: %d", is_greater);
+    else if(c_num1 < c_num2) {
+      return 2;
+    }
   }
   return is_greater;
 }
@@ -120,16 +127,23 @@ static void main_window_unload(Window *window) {
 static void inbox_received_callback(DictionaryIterator *iterator, void *context) {
   // Read tuples for data
   Tuple *btc_tuple = dict_find(iterator, MESSAGE_KEY_BTC_PRICE);
+  uint8_t btc_increasing = 0;
 
   // If all data is available, use it
   if(btc_tuple) {
     memcpy(last_btc, s_btc_price_buffer+4, 8);
     snprintf(s_btc_price_buffer, sizeof(s_btc_price_buffer), "BTC:%s", btc_tuple->value->cstring);
-    if(greater_than(s_btc_price_buffer+4, last_btc)) {
+    btc_increasing = greater_than(s_btc_price_buffer+4, last_btc);
+    // APP_LOG(APP_LOG_LEVEL_INFO, "new price: %s, last price: %s", s_btc_price_buffer, last_btc); 
+    // APP_LOG(APP_LOG_LEVEL_INFO, "btc_increasing: %d", btc_increasing);        
+    if(btc_increasing == 1) {
       s_btc_price_buffer[11] = '+';
     }
-    else {
+    else if(btc_increasing == 2) {
       s_btc_price_buffer[11] = '-';
+    }
+    else {
+      s_btc_price_buffer[11] = '=';
     }
     update_btc();
   }

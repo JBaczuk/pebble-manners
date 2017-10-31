@@ -104,10 +104,10 @@
 	        // Send to Pebble
 	        Pebble.sendAppMessage(dictionary,
 	            function(e) {
-	            console.log('BTC info sent to Pebble successfully!');
+	            // console.log('BTC info sent to Pebble successfully!');
 	            },
 	            function(e) {
-	            console.log('Error sending weather info to Pebble!');
+	            // console.log('Error sending weather info to Pebble!');
 	            }
 	        );
 	    });
@@ -124,7 +124,7 @@
 	// Listen for when an AppMessage is received
 	Pebble.addEventListener('appmessage',
 	function(e) {
-	  console.log('AppMessage received!');
+	//   console.log('AppMessage received!');
 	  getBTCPrice();
 	}                     
 	);

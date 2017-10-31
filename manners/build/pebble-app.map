@@ -1179,7 +1179,7 @@ LOAD /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none
  .note.gnu.build-id
                 0x0000000000000084       0x24 linker stubs
 
-.text           0x00000000000000a8      0x7a0
+.text           0x00000000000000a8      0x7f1
  *(.text)
  .text          0x00000000000000a8       0x14 /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
  *(.text.*)
@@ -1200,193 +1200,192 @@ LOAD /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none
  .text.main_window_load
                 0x0000000000000218      0x1f8 src/c/manners.c.33.o
  .text.inbox_received_callback
-                0x0000000000000410       0xe0 src/c/manners.c.33.o
+                0x0000000000000410      0x110 src/c/manners.c.33.o
  .text.startup.main
-                0x00000000000004f0       0xd8 src/c/manners.c.33.o
-                0x00000000000004f0                main
+                0x0000000000000520       0xd8 src/c/manners.c.33.o
+                0x0000000000000520                main
  .text.app_event_loop
-                0x00000000000005c8        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000005c8                app_event_loop
- .text.app_log  0x00000000000005d4        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000005d4                app_log
- .text.app_message_open
-                0x00000000000005e0        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000005e0                app_message_open
- .text.battery_state_service_peek
-                0x00000000000005ec        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000005ec                battery_state_service_peek
- .text.battery_state_service_subscribe
                 0x00000000000005f8        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000005f8                battery_state_service_subscribe
- .text.clock_is_24h_style
-                0x0000000000000604        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000604                clock_is_24h_style
- .text.dict_find
+                0x00000000000005f8                app_event_loop
+ .text.app_log  0x0000000000000604        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000604                app_log
+ .text.app_message_open
                 0x0000000000000610        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000610                dict_find
- .text.dict_write_uint8
+                0x0000000000000610                app_message_open
+ .text.battery_state_service_peek
                 0x000000000000061c        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x000000000000061c                dict_write_uint8
- .text.fonts_get_system_font
+                0x000000000000061c                battery_state_service_peek
+ .text.battery_state_service_subscribe
                 0x0000000000000628        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000628                fonts_get_system_font
- .text.layer_add_child
+                0x0000000000000628                battery_state_service_subscribe
+ .text.clock_is_24h_style
                 0x0000000000000634        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000634                layer_add_child
- .text.layer_get_bounds
+                0x0000000000000634                clock_is_24h_style
+ .text.dict_find
                 0x0000000000000640        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000640                layer_get_bounds
- .text.memset   0x000000000000064c        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x000000000000064c                memset
- .text.snprintf
+                0x0000000000000640                dict_find
+ .text.dict_write_uint8
+                0x000000000000064c        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x000000000000064c                dict_write_uint8
+ .text.fonts_get_system_font
                 0x0000000000000658        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000658                snprintf
- .text.strftime
+                0x0000000000000658                fonts_get_system_font
+ .text.layer_add_child
                 0x0000000000000664        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000664                strftime
- .text.tick_timer_service_subscribe
+                0x0000000000000664                layer_add_child
+ .text.layer_get_bounds
                 0x0000000000000670        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000670                tick_timer_service_subscribe
- .text.window_create
-                0x000000000000067c        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x000000000000067c                window_create
- .text.window_destroy
+                0x0000000000000670                layer_get_bounds
+ .text.memset   0x000000000000067c        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x000000000000067c                memset
+ .text.snprintf
                 0x0000000000000688        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000688                window_destroy
- .text.window_get_root_layer
+                0x0000000000000688                snprintf
+ .text.strftime
                 0x0000000000000694        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000694                window_get_root_layer
- .text.window_set_window_handlers
+                0x0000000000000694                strftime
+ .text.tick_timer_service_subscribe
                 0x00000000000006a0        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000006a0                window_set_window_handlers
- .text.window_stack_push
+                0x00000000000006a0                tick_timer_service_subscribe
+ .text.window_create
                 0x00000000000006ac        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000006ac                window_stack_push
- .text.app_message_outbox_begin
+                0x00000000000006ac                window_create
+ .text.window_destroy
                 0x00000000000006b8        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000006b8                app_message_outbox_begin
- .text.app_message_outbox_send
+                0x00000000000006b8                window_destroy
+ .text.window_get_root_layer
                 0x00000000000006c4        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000006c4                app_message_outbox_send
- .text.app_message_register_inbox_dropped
+                0x00000000000006c4                window_get_root_layer
+ .text.window_set_window_handlers
                 0x00000000000006d0        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000006d0                app_message_register_inbox_dropped
- .text.app_message_register_inbox_received
+                0x00000000000006d0                window_set_window_handlers
+ .text.window_stack_push
                 0x00000000000006dc        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000006dc                app_message_register_inbox_received
- .text.app_message_register_outbox_failed
+                0x00000000000006dc                window_stack_push
+ .text.app_message_outbox_begin
                 0x00000000000006e8        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000006e8                app_message_register_outbox_failed
- .text.app_message_register_outbox_sent
+                0x00000000000006e8                app_message_outbox_begin
+ .text.app_message_outbox_send
                 0x00000000000006f4        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x00000000000006f4                app_message_register_outbox_sent
- .text.localtime
+                0x00000000000006f4                app_message_outbox_send
+ .text.app_message_register_inbox_dropped
                 0x0000000000000700        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000700                localtime
- .text.text_layer_create
+                0x0000000000000700                app_message_register_inbox_dropped
+ .text.app_message_register_inbox_received
                 0x000000000000070c        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x000000000000070c                text_layer_create
- .text.text_layer_destroy
+                0x000000000000070c                app_message_register_inbox_received
+ .text.app_message_register_outbox_failed
                 0x0000000000000718        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000718                text_layer_destroy
- .text.text_layer_get_layer
+                0x0000000000000718                app_message_register_outbox_failed
+ .text.app_message_register_outbox_sent
                 0x0000000000000724        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000724                text_layer_get_layer
- .text.text_layer_set_background_color
+                0x0000000000000724                app_message_register_outbox_sent
+ .text.localtime
                 0x0000000000000730        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000730                text_layer_set_background_color
- .text.text_layer_set_font
+                0x0000000000000730                localtime
+ .text.text_layer_create
                 0x000000000000073c        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x000000000000073c                text_layer_set_font
- .text.text_layer_set_text
+                0x000000000000073c                text_layer_create
+ .text.text_layer_destroy
                 0x0000000000000748        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000748                text_layer_set_text
- .text.text_layer_set_text_alignment
+                0x0000000000000748                text_layer_destroy
+ .text.text_layer_get_layer
                 0x0000000000000754        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000754                text_layer_set_text_alignment
- .text.text_layer_set_text_color
+                0x0000000000000754                text_layer_get_layer
+ .text.text_layer_set_background_color
                 0x0000000000000760        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000760                text_layer_set_text_color
- .text.time     0x000000000000076c        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x000000000000076c                time
+                0x0000000000000760                text_layer_set_background_color
+ .text.text_layer_set_font
+                0x000000000000076c        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x000000000000076c                text_layer_set_font
+ .text.text_layer_set_text
+                0x0000000000000778        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000778                text_layer_set_text
+ .text.text_layer_set_text_alignment
+                0x0000000000000784        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000784                text_layer_set_text_alignment
+ .text.text_layer_set_text_color
+                0x0000000000000790        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000790                text_layer_set_text_color
+ .text.time     0x000000000000079c        0xc /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x000000000000079c                time
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x0000000000000778       0xd0 src/c/manners.c.33.o
-                                         0xd3 (size before relaxing)
+                0x00000000000007a8       0xf1 src/c/manners.c.33.o
+                                         0xf4 (size before relaxing)
 
-.glue_7         0x0000000000000848        0x0
+.glue_7         0x000000000000089c        0x0
  .glue_7        0x0000000000000000        0x0 linker stubs
 
-.glue_7t        0x0000000000000848        0x0
+.glue_7t        0x000000000000089c        0x0
  .glue_7t       0x0000000000000000        0x0 linker stubs
 
-.vfp11_veneer   0x0000000000000848        0x0
+.vfp11_veneer   0x000000000000089c        0x0
  .vfp11_veneer  0x0000000000000000        0x0 linker stubs
 
-.v4_bx          0x0000000000000848        0x0
+.v4_bx          0x000000000000089c        0x0
  .v4_bx         0x0000000000000000        0x0 linker stubs
 
-.iplt           0x0000000000000848        0x0
+.iplt           0x000000000000089c        0x0
  .iplt          0x0000000000000000        0x0 /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.rel.dyn        0x0000000000000848        0x0
+.rel.dyn        0x000000000000089c        0x0
  .rel.iplt      0x0000000000000000        0x0 /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
  .rel.got       0x0000000000000000        0x0 /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.data           0x0000000000000848       0x10
+.data           0x000000000000089c        0x8
  *(.data)
- .data          0x0000000000000848        0x0 /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crti.o
- .data          0x0000000000000848        0x4 /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
-                0x0000000000000848                __dso_handle
- .data          0x000000000000084c        0x0 src/c/manners.c.33.o
- .data          0x000000000000084c        0x0 aplite/appinfo.auto.c.33.o
- .data          0x000000000000084c        0x0 aplite/src/resource_ids.auto.c.33.o
- .data          0x000000000000084c        0x0 src/message_keys.auto.c.33.o
- .data          0x000000000000084c        0x0 /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
- .data          0x000000000000084c        0x0 /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
- .data          0x000000000000084c        0x0 /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtn.o
+ .data          0x000000000000089c        0x0 /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crti.o
+ .data          0x000000000000089c        0x4 /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
+                0x000000000000089c                __dso_handle
+ .data          0x00000000000008a0        0x0 src/c/manners.c.33.o
+ .data          0x00000000000008a0        0x0 aplite/appinfo.auto.c.33.o
+ .data          0x00000000000008a0        0x0 aplite/src/resource_ids.auto.c.33.o
+ .data          0x00000000000008a0        0x0 src/message_keys.auto.c.33.o
+ .data          0x00000000000008a0        0x0 /Users/jbaczuk/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+ .data          0x00000000000008a0        0x0 /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
+ .data          0x00000000000008a0        0x0 /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtn.o
  *(.data.*)
- .data.last_btc
-                0x000000000000084c        0x8 src/c/manners.c.33.o
  .data.MESSAGE_KEY_BTC_PRICE
-                0x0000000000000854        0x4 src/message_keys.auto.c.33.o
-                0x0000000000000854                MESSAGE_KEY_BTC_PRICE
+                0x00000000000008a0        0x4 src/message_keys.auto.c.33.o
+                0x00000000000008a0                MESSAGE_KEY_BTC_PRICE
 
-.igot.plt       0x0000000000000858        0x0
+.igot.plt       0x00000000000008a4        0x0
  .igot.plt      0x0000000000000000        0x0 /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.got            0x0000000000000858        0x4
- .got           0x0000000000000858        0x4 /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
+.got            0x00000000000008a4        0x4
+ .got           0x00000000000008a4        0x4 /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.got.plt        0x000000000000085c        0xc
- .got.plt       0x000000000000085c        0xc /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
-                0x000000000000085c                _GLOBAL_OFFSET_TABLE_
+.got.plt        0x00000000000008a8        0xc
+ .got.plt       0x00000000000008a8        0xc /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
+                0x00000000000008a8                _GLOBAL_OFFSET_TABLE_
 
-.bss            0x0000000000000868       0x3c
+.bss            0x00000000000008b4       0x44
  *(.bss)
  *(.bss.*)
- .bss.s_buffer.7490
-                0x0000000000000868        0x4 src/c/manners.c.33.o
  .bss.s_date_layer
-                0x000000000000086c        0x4 src/c/manners.c.33.o
- .bss.s_buffer.7498
-                0x0000000000000870        0x8 src/c/manners.c.33.o
+                0x00000000000008b4        0x4 src/c/manners.c.33.o
+ .bss.s_buffer.7493
+                0x00000000000008b8        0x4 src/c/manners.c.33.o
  .bss.s_battery_layer
-                0x0000000000000878        0x4 src/c/manners.c.33.o
+                0x00000000000008bc        0x4 src/c/manners.c.33.o
  .bss.s_time_layer
-                0x000000000000087c        0x4 src/c/manners.c.33.o
+                0x00000000000008c0        0x4 src/c/manners.c.33.o
+ .bss.s_buffer.7501
+                0x00000000000008c4        0x8 src/c/manners.c.33.o
  .bss.s_btc_layer
-                0x0000000000000880        0x4 src/c/manners.c.33.o
+                0x00000000000008cc        0x4 src/c/manners.c.33.o
+ .bss.last_btc  0x00000000000008d0        0x8 src/c/manners.c.33.o
  .bss.s_btc_price_buffer
-                0x0000000000000884        0xc src/c/manners.c.33.o
- .bss.s_buffer2.7499
-                0x0000000000000890        0xa src/c/manners.c.33.o
- *fill*         0x000000000000089a        0x2 
+                0x00000000000008d8        0xc src/c/manners.c.33.o
+ .bss.s_buffer2.7502
+                0x00000000000008e4        0xa src/c/manners.c.33.o
+ *fill*         0x00000000000008ee        0x2 
  .bss.s_battery_level
-                0x000000000000089c        0x4 src/c/manners.c.33.o
+                0x00000000000008f0        0x4 src/c/manners.c.33.o
  .bss.s_main_window
-                0x00000000000008a0        0x4 src/c/manners.c.33.o
+                0x00000000000008f4        0x4 src/c/manners.c.33.o
 
 DISCARD
  libc.a(*)
@@ -1425,20 +1424,20 @@ OUTPUT(/Users/jbaczuk/Documents/Personal/pebble-manners/manners/build/aplite/peb
  .comment       0x0000000000000000       0x4f src/message_keys.auto.c.33.o
  .comment       0x0000000000000000       0x4f /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
 
-.debug_info     0x0000000000000000     0x18d4
- .debug_info    0x0000000000000000     0x14c3 src/c/manners.c.33.o
- .debug_info    0x00000000000014c3      0x31a aplite/appinfo.auto.c.33.o
- .debug_info    0x00000000000017dd       0x64 aplite/src/resource_ids.auto.c.33.o
- .debug_info    0x0000000000001841       0x93 src/message_keys.auto.c.33.o
+.debug_info     0x0000000000000000     0x1942
+ .debug_info    0x0000000000000000     0x1531 src/c/manners.c.33.o
+ .debug_info    0x0000000000001531      0x31a aplite/appinfo.auto.c.33.o
+ .debug_info    0x000000000000184b       0x64 aplite/src/resource_ids.auto.c.33.o
+ .debug_info    0x00000000000018af       0x93 src/message_keys.auto.c.33.o
 
-.debug_abbrev   0x0000000000000000      0x450
- .debug_abbrev  0x0000000000000000      0x348 src/c/manners.c.33.o
- .debug_abbrev  0x0000000000000348       0x9e aplite/appinfo.auto.c.33.o
- .debug_abbrev  0x00000000000003e6       0x26 aplite/src/resource_ids.auto.c.33.o
- .debug_abbrev  0x000000000000040c       0x44 src/message_keys.auto.c.33.o
+.debug_abbrev   0x0000000000000000      0x466
+ .debug_abbrev  0x0000000000000000      0x35e src/c/manners.c.33.o
+ .debug_abbrev  0x000000000000035e       0x9e aplite/appinfo.auto.c.33.o
+ .debug_abbrev  0x00000000000003fc       0x26 aplite/src/resource_ids.auto.c.33.o
+ .debug_abbrev  0x0000000000000422       0x44 src/message_keys.auto.c.33.o
 
-.debug_loc      0x0000000000000000      0x353
- .debug_loc     0x0000000000000000      0x353 src/c/manners.c.33.o
+.debug_loc      0x0000000000000000      0x3ba
+ .debug_loc     0x0000000000000000      0x3ba src/c/manners.c.33.o
 
 .debug_aranges  0x0000000000000000       0xb0
  .debug_aranges
@@ -1450,23 +1449,23 @@ OUTPUT(/Users/jbaczuk/Documents/Personal/pebble-manners/manners/build/aplite/peb
  .debug_aranges
                 0x0000000000000098       0x18 src/message_keys.auto.c.33.o
 
-.debug_ranges   0x0000000000000000       0xb0
- .debug_ranges  0x0000000000000000       0xb0 src/c/manners.c.33.o
+.debug_ranges   0x0000000000000000       0xa0
+ .debug_ranges  0x0000000000000000       0xa0 src/c/manners.c.33.o
 
-.debug_line     0x0000000000000000      0x5fb
- .debug_line    0x0000000000000000      0x3eb src/c/manners.c.33.o
- .debug_line    0x00000000000003eb      0x136 aplite/appinfo.auto.c.33.o
- .debug_line    0x0000000000000521       0x1d aplite/src/resource_ids.auto.c.33.o
- .debug_line    0x000000000000053e       0xbd src/message_keys.auto.c.33.o
+.debug_line     0x0000000000000000      0x603
+ .debug_line    0x0000000000000000      0x3f3 src/c/manners.c.33.o
+ .debug_line    0x00000000000003f3      0x136 aplite/appinfo.auto.c.33.o
+ .debug_line    0x0000000000000529       0x1d aplite/src/resource_ids.auto.c.33.o
+ .debug_line    0x0000000000000546       0xbd src/message_keys.auto.c.33.o
 
-.debug_str      0x0000000000000000      0xd2a
- .debug_str     0x0000000000000000      0xaa7 src/c/manners.c.33.o
-                                        0xb4e (size before relaxing)
- .debug_str     0x0000000000000aa7      0x236 aplite/appinfo.auto.c.33.o
+.debug_str      0x0000000000000000      0xd3d
+ .debug_str     0x0000000000000000      0xaba src/c/manners.c.33.o
+                                        0xb6b (size before relaxing)
+ .debug_str     0x0000000000000aba      0x236 aplite/appinfo.auto.c.33.o
                                         0x32d (size before relaxing)
- .debug_str     0x0000000000000cdd       0x1f aplite/src/resource_ids.auto.c.33.o
+ .debug_str     0x0000000000000cf0       0x1f aplite/src/resource_ids.auto.c.33.o
                                          0xee (size before relaxing)
- .debug_str     0x0000000000000cfc       0x2e src/message_keys.auto.c.33.o
+ .debug_str     0x0000000000000d0f       0x2e src/message_keys.auto.c.33.o
                                         0x11c (size before relaxing)
 
 .debug_frame    0x0000000000000000      0x11c
