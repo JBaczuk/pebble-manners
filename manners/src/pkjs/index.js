@@ -16,6 +16,7 @@ function getBTCPrice() {
     function(responseText) {
         // responseText contains a JSON object
         var json = JSON.parse(responseText);
+        console.log(json.price);
         // Assemble dictionary using our keys
         var dictionary = {
             'BTC_PRICE': json.price
@@ -32,12 +33,40 @@ function getBTCPrice() {
         );
     });
 }
+  
+function getETHPrice() {
+    // Construct URL
+    var url = 'https://api.gdax.com/products/ETH-USD/ticker';
+
+    // Send request
+    xhrRequest(url, 'GET', 
+    function(responseText) {
+        // responseText contains a JSON object
+        var json = JSON.parse(responseText);
+        console.log(json.price);
+        // Assemble dictionary using our keys
+        var dictionary = {
+            'ETH_PRICE': json.price
+        };
+        
+        // Send to Pebble
+        Pebble.sendAppMessage(dictionary,
+            function(e) {
+            // console.log('ETH info sent to Pebble successfully!');
+            },
+            function(e) {
+            // console.log('Error sending weather info to Pebble!');
+            }
+        );
+    });
+}
 
 // Listen for when the watchface is opened
 Pebble.addEventListener('ready', 
 function(e) {
   console.log('PebbleKit JS ready!');
   getBTCPrice();
+  getETHPrice();
 }
 );
 
@@ -46,5 +75,6 @@ Pebble.addEventListener('appmessage',
 function(e) {
 //   console.log('AppMessage received!');
   getBTCPrice();
+  getETHPrice();
 }                     
 );

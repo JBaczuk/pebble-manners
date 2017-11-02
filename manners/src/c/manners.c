@@ -6,16 +6,19 @@ static TextLayer *s_time_layer;
 static TextLayer *s_date_layer;
 static TextLayer *s_battery_layer;
 static TextLayer *s_btc_layer;
+static TextLayer *s_eth_layer;
 static int s_battery_level;
 static char s_btc_price_buffer[12];
 static char last_btc[8];
+static char s_eth_price_buffer[12];
+static char last_eth[8];
 
 static uint8_t greater_than(char* num1, char* num2) {     
   uint8_t is_greater = 0;
   uint8_t idx;
   char c_num1;
   char c_num2;
-  for(idx=0; idx < sizeof(last_btc)-1; idx++) {
+  for(idx=0; idx < 7; idx++) {
     // APP_LOG(APP_LOG_LEVEL_INFO, "new: %c, last: %c", (char)*num1, (char)*num2);
     c_num1 = (char)*num1++;
     c_num2 = (char)*num2++;
@@ -72,6 +75,10 @@ static void update_btc() {
   text_layer_set_text(s_btc_layer, s_btc_price_buffer);
 }
 
+static void update_eth() {
+  text_layer_set_text(s_eth_layer, s_eth_price_buffer);
+}
+
 static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
   update_time();
   refresh_web_data();
@@ -85,6 +92,7 @@ static void main_window_load(Window *window) {
   s_date_layer = text_layer_create(GRect(0, 0, bounds.size.w/2, 50));
   s_battery_layer = text_layer_create(GRect(bounds.size.w/2, 0, bounds.size.w/2, 50));
   s_btc_layer = text_layer_create(GRect(0, bounds.size.h - 25, bounds.size.w, 50));
+  s_eth_layer = text_layer_create(GRect(0, bounds.size.h - 50, bounds.size.w, 50));
 
   text_layer_set_background_color(s_time_layer, GColorClear);
   text_layer_set_text_color(s_time_layer, GColorBlack);
@@ -109,12 +117,19 @@ static void main_window_load(Window *window) {
   text_layer_set_text(s_btc_layer, "BTC:?");
   text_layer_set_font(s_btc_layer, fonts_get_system_font(FONT_KEY_ROBOTO_CONDENSED_21));
   text_layer_set_text_alignment(s_btc_layer, GTextAlignmentCenter);
+  
+  text_layer_set_background_color(s_eth_layer, GColorClear);
+  text_layer_set_text_color(s_eth_layer, GColorBlack);
+  text_layer_set_text(s_eth_layer, "ETH:?");
+  text_layer_set_font(s_eth_layer, fonts_get_system_font(FONT_KEY_ROBOTO_CONDENSED_21));
+  text_layer_set_text_alignment(s_eth_layer, GTextAlignmentCenter);
 
   // Add it as a child layer to the Window's root layer
   layer_add_child(window_layer, text_layer_get_layer(s_time_layer));
   layer_add_child(window_layer, text_layer_get_layer(s_date_layer));
   layer_add_child(window_layer, text_layer_get_layer(s_battery_layer));
   layer_add_child(window_layer, text_layer_get_layer(s_btc_layer));
+  layer_add_child(window_layer, text_layer_get_layer(s_eth_layer));
 }
 
 static void main_window_unload(Window *window) {
@@ -122,12 +137,15 @@ static void main_window_unload(Window *window) {
   text_layer_destroy(s_date_layer);
   text_layer_destroy(s_battery_layer);
   text_layer_destroy(s_btc_layer);
+  text_layer_destroy(s_eth_layer);
 }
 
 static void inbox_received_callback(DictionaryIterator *iterator, void *context) {
   // Read tuples for data
   Tuple *btc_tuple = dict_find(iterator, MESSAGE_KEY_BTC_PRICE);
   uint8_t btc_increasing = 0;
+  Tuple *eth_tuple = dict_find(iterator, MESSAGE_KEY_ETH_PRICE);
+  uint8_t eth_increasing = 0;
 
   // If all data is available, use it
   if(btc_tuple) {
@@ -136,6 +154,7 @@ static void inbox_received_callback(DictionaryIterator *iterator, void *context)
     btc_increasing = greater_than(s_btc_price_buffer+4, last_btc);
     // APP_LOG(APP_LOG_LEVEL_INFO, "new price: %s, last price: %s", s_btc_price_buffer, last_btc); 
     // APP_LOG(APP_LOG_LEVEL_INFO, "btc_increasing: %d", btc_increasing);        
+    APP_LOG(APP_LOG_LEVEL_INFO, "sizeof(s_btc_price_buffer): %d", sizeof(s_btc_price_buffer));    
     if(btc_increasing == 1) {
       s_btc_price_buffer[11] = '+';
     }
@@ -146,6 +165,25 @@ static void inbox_received_callback(DictionaryIterator *iterator, void *context)
       s_btc_price_buffer[11] = '=';
     }
     update_btc();
+  }
+  // If all data is available, use it
+  if(eth_tuple) {
+    memcpy(last_eth, s_eth_price_buffer+4, 8);
+    snprintf(s_eth_price_buffer, sizeof(s_eth_price_buffer), "ETH:%s", eth_tuple->value->cstring);
+    eth_increasing = greater_than(s_eth_price_buffer+4, last_eth);
+    // APP_LOG(APP_LOG_LEVEL_INFO, "new price: %s, last price: %s", s_eth_price_buffer, last_eth); 
+    // APP_LOG(APP_LOG_LEVEL_INFO, "eth_increasing: %d", eth_increasing);        
+    APP_LOG(APP_LOG_LEVEL_INFO, "sizeof(s_eth_price_buffer): %d", sizeof(s_eth_price_buffer));        
+    if(eth_increasing == 1) {
+      s_eth_price_buffer[11] = '+';
+    }
+    else if(eth_increasing == 2) {
+      s_eth_price_buffer[11] = '-';
+    }
+    else {
+      s_eth_price_buffer[11] = '=';
+    }
+    update_eth();
   }
 }
 
